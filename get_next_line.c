@@ -6,7 +6,7 @@
 /*   By: rude-jes <ruipaulo.unify@outlook.fr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 15:38:17 by rude-jes          #+#    #+#             */
-/*   Updated: 2024/01/08 05:04:35 by rude-jes         ###   ########.fr       */
+/*   Updated: 2024/01/08 05:08:34 by rude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,7 @@ char	*get_next_line(int fd)
 	return (gnl.line);
 }
 
-#include <fcntl.h>
+/*#include <fcntl.h>
 #include <stdio.h>
 
 int	main(void)
@@ -113,3 +113,4 @@ int	main(void)
 	close(fd);
 	exit(0);
 }
+*/
