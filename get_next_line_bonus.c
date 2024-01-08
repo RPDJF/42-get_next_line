@@ -6,7 +6,7 @@
 /*   By: rude-jes <ruipaulo.unify@outlook.fr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 15:38:17 by rude-jes          #+#    #+#             */
-/*   Updated: 2024/01/08 05:15:59 by rude-jes         ###   ########.fr       */
+/*   Updated: 2024/01/08 05:20:02 by rude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ char	*get_next_line(int fd)
 {
 	static t_gnl	gnl[257];
 
-	if (fd < 0)
+	if (fd < 0 || fd > 256)
 		return (0);
 	if (BUFFER_SIZE <= 0 || read(fd, 0, 0))
 	{
