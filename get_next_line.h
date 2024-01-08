@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rude-jes <rude-jes@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rude-jes <ruipaulo.unify@outlook.fr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 15:39:05 by rude-jes          #+#    #+#             */
-/*   Updated: 2023/10/19 15:58:10 by rude-jes         ###   ########.fr       */
+/*   Updated: 2024/01/08 05:04:24 by rude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,20 @@
 # include <unistd.h>
 # include <stdlib.h>
 
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 4
+# endif
+
+typedef struct s_gnl
+{
+	char		buffer[BUFFER_SIZE];
+	ssize_t		size;
+	int			fd;
+	char		*line;
+}				t_gnl;
+
 char	*get_next_line(int fd);
-void	*ft_exallocf(void *ptr, size_t size, size_t newsize);
+void	*ft_reallocf(void *ptr, size_t size, size_t newsize);
 void	*ft_memmove(void *dest, const void *src, size_t n);
 void	*ft_memchr(const void *s, int c, size_t n);
 void	*ft_memncat(void *dest, size_t start, void *src, size_t nb);

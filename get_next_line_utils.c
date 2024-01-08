@@ -3,51 +3,38 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rude-jes <rude-jes@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rude-jes <ruipaulo.unify@outlook.fr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 15:41:46 by rude-jes          #+#    #+#             */
-/*   Updated: 2023/10/19 15:58:09 by rude-jes         ###   ########.fr       */
+/*   Updated: 2024/01/08 05:04:44 by rude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-/*
- *	Returns a pointer to an extend malloc
- *	Copies bytes from ptr to the returned malloc
- *	ft_exallocf frees the ptr's pointed malloc
- *
- *	Size inputs represents the size of the malloc in bytes
- *	If ptr is null, returns a new 'calloc' with newsize
- *	Returns 0 if allocation failed and free ptr
- */
-void	*ft_exallocf(void *ptr, size_t size, size_t newsize)
+void	*ft_reallocf(void *ptr, size_t size, size_t newsize)
 {
-	void	*p;
-	void	*p_p;
+	unsigned char	*old_alloc;
+	unsigned char	*new_alloc;
+	size_t			i;
 
-	p = malloc(newsize);
-	if (!p)
+	i = 0;
+	if (ptr == 0)
+		return (malloc(newsize));
+	old_alloc = (unsigned char *)ptr;
+	new_alloc = (unsigned char *)malloc(newsize);
+	if (new_alloc == 0)
 	{
 		free(ptr);
 		return (0);
 	}
-	p_p = p;
-	if (!ptr)
+	while (i < size && i < newsize)
 	{
-		while ((size_t)p_p++ - (size_t)p < newsize)
-			*((unsigned char *)(p_p - 1)) = 0;
-		return (p);
+		new_alloc[i] = old_alloc[i];
+		i++;
 	}
-	while ((size_t)p_p - (size_t)p < size)
-	{
-		*((unsigned char *)(p_p)) = *((unsigned char *)(ptr + (p_p - p)));
-		p_p++;
-	}
-	while ((size_t)p_p - (size_t)p < newsize)
-		*((unsigned char *)(p_p++)) = 0;
 	free(ptr);
-	return (p);
+	return (new_alloc);
 }
 
 /*
@@ -117,7 +104,7 @@ char	*ft_memtostr(void *mem, size_t size)
 	char	eos;
 
 	eos = '\0';
-	mem = ft_exallocf(mem, size, size + 1);
+	mem = ft_reallocf(mem, size, size + 1);
 	if (!mem)
 		return (0);
 	((unsigned char *)mem)[size] = eos;
