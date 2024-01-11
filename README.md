@@ -1,5 +1,5 @@
 ![](https://raw.githubusercontent.com/RPDJF/42-Repos/main/cursus/get_next_line_score.png)
-![](https://github.com/ayogun/42-project-badges/blob/main/badges/get_next_linee.png?raw=true)
+![](https://github.com/ayogun/42-project-badges/blob/main/badges/get_next_linem.png?raw=true)
 
 ![](https://img.shields.io/github/languages/code-size/rpdjf/42-get_next_line?color=5BCFFF)
 
