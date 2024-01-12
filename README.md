@@ -16,17 +16,6 @@ Hey code wizards! This GitHub realm is where I've stashed the 42 get_next_line p
 
 get_next_line is like a coding riddle that takes you into the world of reading from a file descriptor. It's the ninja move of file reading in C! 📖🥷
 
-## Compile-it! 💻
-
-Here's the spellbook to conjure your get_next_line masterpiece:
-
-- `make`: Standard enchantment. Compile the code, and you're good to roll!
-- `make clean`: Sweep away the traces of your enchantment. A tidy workspace is a powerful workspace.
-- `make fclean`: Need a fresh start? This erases all enchantments, leaving nothing behind.
-- `make debug`: Unleash the debug sorcery with lldb. Warning: It leaves behind extra mystical artifacts not handled by `make fclean`.
-
-Navigate this enchanted realm with these commands, and may your get_next_line journey be epic! 🌟🔮
-
 ## Cloning the Repository
 To embark on this coding adventure, use the command:
 ```bash
